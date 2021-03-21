@@ -4,13 +4,13 @@
 
 ### Introducción
 
-En este informe se resumen las actividades realizadas en la **práctica 5** para poner en práctica nuestros conocimientos de TypeScript sobre tipos de datos que son utilizados para agrupar elementos (arrays, tuplas y enumerados) a través de la implementación de distintas funciones en una serie de ejercicios.
+En este informe se resumen las actividades realizadas en la **práctica 5** para poner en práctica nuestros conocimientos de TypeScript sobre objetos,clases e interfaces a través de la implementación de distintas funciones en una serie de ejercicios.
 
 ### Objetivos
 
 Al finalizar la práctica, habremos completado los siguientes objetivos:
 
-* Separar las clases de un mismo cógdigo en ficheros
+* Separar las clases de un mismo código en ficheros
 * Crear y manipular con soltura clases y sus respectivos atributos
 * Crear interfaces implementables en nuestras clases
 * Manejo de instancias, constructores y constructores simplificados
