@@ -37,14 +37,14 @@ describe('Ejercicio 3: Medios de transporte', () => {
     calle1.addVehiculo(tren1)
 
     describe('Probar llamadas a algunas funciones', () => {
-        it('Se puede instanciar un coche', () => {
+        it('Se puede obtener la matricula de un coche', () => {
             expect(coche1.getMatricula()).to.be.equal("9237 DFB");
         });
-        it('Se puede instanciar una moto', () => {
-            expect(coche1.getEmisiones()).to.be.equal(98);
+        it('Se puede obtener las emisiones de una moto', () => {
+            expect(coche1.getEmisiones()).to.be.equal(112);
         });
     });
-    describe('Prueba para mostrarpor pantalla', () => {
+    describe('Prueba para mostrar por pantalla', () => {
         it('funcion contar los vehículos de cada tipo', () => {
             calle1.contarVehiculos();
         }); 
