@@ -488,6 +488,20 @@ Un parámetro importante que recibe esta clase es el de los tipos de vehículo q
 
 ```
 
+Así como street permite añadir vehiculos a la calle, también permite eliminarlos de ella:
+
+
+```ts
+    /**
+     * Funcion removeVehiculo
+     * Elimina el vehículo de la pocisión indicada
+     * @param i posición
+     */
+    public removeVehiculo(i :number){
+        this.vehiculos.splice(i,1)
+    }
+```
+
 Street también tiene un método que permite contar los vehículos de cada tipo que se encuentran en la calle y lo muestra por consola. Para ello, este método recorre el vector de vehículos interno y va sumando a un contador multiple cuando se verifica el tipo del vehiculo en cada iteración. Una vez terminado de almacenar dicha informació, se reestructura y se muestra por pantalla a modo de mensaje:
 
 ```ts
