@@ -222,3 +222,4 @@ Como podemos comprobar, start necesita de la función pokemonDamage, la cual se 
         return damage;
     }
 ```
+<img src="img/1.PNG" alt="" />
