@@ -46,7 +46,7 @@ describe('Ejercicio 2: Gestor bibliográfico', () => {
             gestor1.muestraArticulos();
         });            
     });
-
+    /*
     describe('Prueba para el buscador', () => {
         it('buscar por autor', () => {
             gestor1.buscaArticulos(["Isma Dahmani"], ["autor"]);
@@ -55,4 +55,6 @@ describe('Ejercicio 2: Gestor bibliográfico', () => {
             gestor1.buscaArticulos(["tax"], ["keyword"]);
         });    
     });
+    */
 });
+
