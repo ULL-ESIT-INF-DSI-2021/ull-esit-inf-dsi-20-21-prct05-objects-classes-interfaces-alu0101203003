@@ -1,4 +1,4 @@
-# Práctica 4: Arrays, tuplas y enumerados. Informe.
+# Práctica 5: Objetos, clases e interfaces. Informe.
 ## Desarrollo de Sistemas Informáticos 
 ## Raúl Martín Rigor - alu0101203003@ull.edu.es
 
@@ -31,3 +31,27 @@ La estructura debería quedar similar a las siguientes fotos:
 Será necesario implementar las clases de cada ejercicio en ficheros diferentes. Las clases que dependan de otras requeriran de un `import` de la clase que necesiten:
 
 <img src="img/Captura1d.PNG" alt="" /> <img src="img/Captura1e.PNG" alt="" />
+
+### 2. Ejercicios
+
+Paso a explicar la resolución de cada ejercicio y a adjuntar su código y expectativa. Se mostrará una versión simplificada de los enunciados de los ejercicios (para verlos al completo con aclaraciones y pistas, consultar la [guía de la práctica](https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/)
+
+#### 1.1 Ejercicio 1
+
+**Enunciado:**
+A partir del Ejercicio 9 realizado en la Práctica 3, cree la estructura de clases e interfaces que considere oportuna para representar el siguiente escenario.
+
+Se pide crear una Pokedex donde se almacene la información relacionada con distintos Pokemons. Para cada Pokemon, se deben almacenar los siguientes elementos de información en la Pokedex:
+
+    Nombre del Pokemon
+    Peso y altura
+    Tipo
+    Estadísticas básicas: ataque, defensa, velocidad, daño máximo (HP). Puede encontrar información relativa aquí.
+
+Por último, diseñe una clase Combat que simule el combate entre dos Pokemons. Para ello, un objeto de dicha clase deberá ser construido con dos contrincantes. Además, reescriba la función del ejercicio 9 de la práctica 3 como un método de esta clase. Incluya también un método start dentro de la clase Combat que realice la simulación del combate. Este método se basará en lo siguiente:
+
+    Se realizarán ataques entre los contrincantes hasta que el daño sufrido por uno de ellos sea igual o superior a su HP.
+    Se considera que el primero de los contrincantes que recibe un objeto de la clase Combat será siempre el primero en realizar un ataque.
+    El método deberá mostrar por pantalla la evolución del combate. Esto es, después de cada ataque se debe mostrar el estado de HP de cada contrincante.
+
+**Resolución:**
