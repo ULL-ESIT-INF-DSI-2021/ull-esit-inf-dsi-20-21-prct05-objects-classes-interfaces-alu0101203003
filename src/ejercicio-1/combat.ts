@@ -3,7 +3,7 @@ import {Pokemon} from '../ejercicio-1/pokemon';
 /**
  * Clase para implementar los combates
  */
- export class Combat {
+export class Combat {
     /**
      * Constructor
      * @param pokemon1 pokemon que ataca primero
