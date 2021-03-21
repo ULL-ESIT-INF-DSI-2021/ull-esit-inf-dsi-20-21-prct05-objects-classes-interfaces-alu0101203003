@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Gestor | ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003</title>
+	<title>Moto | ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003</title>
 	<meta name="description" content="Documentation for ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -55,13 +55,13 @@
 					<a href="../modules.html">ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003</a>
 				</li>
 				<li>
-					<a href="../modules/ejercicio_2_gestor.html">ejercicio-2/gestor</a>
+					<a href="../modules/ejercicio_3_moto.html">ejercicio-3/moto</a>
 				</li>
 				<li>
-					<a href="ejercicio_2_gestor.gestor.html">Gestor</a>
+					<a href="ejercicio_3_moto.moto.html">Moto</a>
 				</li>
 			</ul>
-			<h1>Class Gestor</h1>
+			<h1>Class Moto</h1>
 		</div>
 	</div>
 </header>
@@ -71,7 +71,8 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>Clase que contiene la información del Gestor Bibliográfico.</p>
+						<p>Clase Moto
+						Hereda de la clase Vehiculo</p>
 					</div>
 				</div>
 			</section>
@@ -79,7 +80,12 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Gestor</span>
+						<a href="ejercicio_3_vehiculo.vehiculo.html" class="tsd-signature-type" data-tsd-kind="Class">Vehiculo</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">Moto</span>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</section>
@@ -90,15 +96,21 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="ejercicio_2_gestor.gestor.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="ejercicio_3_moto.moto.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-inherited">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="ejercicio_3_moto.moto.html#dimensiones" class="tsd-kind-icon">dimensiones</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="ejercicio_3_moto.moto.html#velocidad" class="tsd-kind-icon">velocidad</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_2_gestor.gestor.html#addarticulo" class="tsd-kind-icon">add<wbr>Articulo</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_2_gestor.gestor.html#buscaarticulos" class="tsd-kind-icon">busca<wbr>Articulos</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_2_gestor.gestor.html#muestraarticulos" class="tsd-kind-icon">muestra<wbr>Articulos</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_3_moto.moto.html#getemisiones" class="tsd-kind-icon">get<wbr>Emisiones</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="ejercicio_3_moto.moto.html#getmatricula" class="tsd-kind-icon">get<wbr>Matricula</a></li>
 							</ul>
 						</section>
 					</div>
@@ -106,17 +118,18 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Gestor<span class="tsd-signature-symbol">(</span>articulos<span class="tsd-signature-symbol">: </span><a href="ejercicio_2_articulo.articulo.html" class="tsd-signature-type" data-tsd-kind="Class">Articulo</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ejercicio_2_gestor.gestor.html" class="tsd-signature-type" data-tsd-kind="Class">Gestor</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Moto<span class="tsd-signature-symbol">(</span>velocidad<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, dimensiones<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, emisiones<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, matricula<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="ejercicio_3_moto.moto.html" class="tsd-signature-type" data-tsd-kind="Class">Moto</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="ejercicio_3_vehiculo.vehiculo.html">Vehiculo</a>.<a href="ejercicio_3_vehiculo.vehiculo.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003/blob/e8da514/src/ejercicio-2/gestor.ts#L6">ejercicio-2/gestor.ts:6</a></li>
+									<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003/blob/e8da514/src/ejercicio-3/moto.ts#L7">ejercicio-3/moto.ts:7</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -127,109 +140,99 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>articulos: <a href="ejercicio_2_articulo.articulo.html" class="tsd-signature-type" data-tsd-kind="Class">Articulo</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>velocidad: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>conjunto de articulos</p>
+										<p>velocidad en km/h a la que se mueve (heredada de vehiculo)</p>
+									</div>
+								</li>
+								<li>
+									<h5>dimensiones: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>&quot;largoXancho&quot; en metros del vehiculo (heredada de vehiculo)</p>
+									</div>
+								</li>
+								<li>
+									<h5>emisiones: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>gramos de CO2 por kilometro que emite el vehiculo</p>
+									</div>
+								</li>
+								<li>
+									<h5>matricula: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>matricula del vehiculo</p>
 									</div>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="ejercicio_2_gestor.gestor.html" class="tsd-signature-type" data-tsd-kind="Class">Gestor</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="ejercicio_3_moto.moto.html" class="tsd-signature-type" data-tsd-kind="Class">Moto</a></h4>
 						</li>
 					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="dimensiones" class="tsd-anchor"></a>
+					<h3>dimensiones</h3>
+					<div class="tsd-signature tsd-kind-icon">dimensiones<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="ejercicio_3_vehiculo.vehiculo.html">Vehiculo</a>.<a href="ejercicio_3_vehiculo.vehiculo.html#dimensiones">dimensiones</a></p>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+					<a name="velocidad" class="tsd-anchor"></a>
+					<h3>velocidad</h3>
+					<div class="tsd-signature tsd-kind-icon">velocidad<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="ejercicio_3_vehiculo.vehiculo.html">Vehiculo</a>.<a href="ejercicio_3_vehiculo.vehiculo.html#velocidad">velocidad</a></p>
+					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="addarticulo" class="tsd-anchor"></a>
-					<h3>add<wbr>Articulo</h3>
+					<a name="getemisiones" class="tsd-anchor"></a>
+					<h3>get<wbr>Emisiones</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">add<wbr>Articulo<span class="tsd-signature-symbol">(</span>articulo<span class="tsd-signature-symbol">: </span><a href="ejercicio_2_articulo.articulo.html" class="tsd-signature-type" data-tsd-kind="Class">Articulo</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Emisiones<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003/blob/e8da514/src/ejercicio-2/gestor.ts#L26">ejercicio-2/gestor.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003/blob/e8da514/src/ejercicio-3/moto.ts#L23">ejercicio-3/moto.ts:23</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Funcion addArticulo</p>
+									<p>Funcion getEmisiones</p>
 								</div>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>articulo: <a href="ejercicio_2_articulo.articulo.html" class="tsd-signature-type" data-tsd-kind="Class">Articulo</a></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>articulo a añadir al conjunto</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<p>emisiones</p>
 						</li>
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="buscaarticulos" class="tsd-anchor"></a>
-					<h3>busca<wbr>Articulos</h3>
+					<a name="getmatricula" class="tsd-anchor"></a>
+					<h3>get<wbr>Matricula</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">busca<wbr>Articulos<span class="tsd-signature-symbol">(</span>keywords<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, filtrar<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Matricula<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003/blob/e8da514/src/ejercicio-2/gestor.ts#L37">ejercicio-2/gestor.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003/blob/e8da514/src/ejercicio-3/moto.ts#L31">ejercicio-3/moto.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Funcion buscaArticulos
-									Arroja los articulos que coinciden con los filtros de búsqueda</p>
+									<p>Funcion getMatricula</p>
 								</div>
 							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>keywords: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>palabras claves por las que buscar</p>
-									</div>
-								</li>
-								<li>
-									<h5>filtrar: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>campo por el que filtrar</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
-							<p>El articulo/articulos filtrar en formato APA</p>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="muestraarticulos" class="tsd-anchor"></a>
-					<h3>muestra<wbr>Articulos</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">muestra<wbr>Articulos<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct05-objects-classes-interfaces-alu0101203003/blob/e8da514/src/ejercicio-2/gestor.ts#L18">ejercicio-2/gestor.ts:18</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Funcion muestraArticulos
-									Muestra los articulos por pantalla</p>
-								</div>
-							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+							<p>matricula</p>
 						</li>
 					</ul>
 				</section>
@@ -253,7 +256,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/ejercicio_2_articulo.html">ejercicio-<wbr>2/articulo</a>
 					</li>
-					<li class="current tsd-kind-module">
+					<li class=" tsd-kind-module">
 						<a href="../modules/ejercicio_2_gestor.html">ejercicio-<wbr>2/gestor</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -262,7 +265,7 @@
 					<li class=" tsd-kind-module">
 						<a href="../modules/ejercicio_3_guagua.html">ejercicio-<wbr>3/guagua</a>
 					</li>
-					<li class=" tsd-kind-module">
+					<li class="current tsd-kind-module">
 						<a href="../modules/ejercicio_3_moto.html">ejercicio-<wbr>3/moto</a>
 					</li>
 					<li class=" tsd-kind-module">
@@ -290,19 +293,22 @@
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-class tsd-parent-kind-module">
-						<a href="ejercicio_2_gestor.gestor.html" class="tsd-kind-icon">Gestor</a>
+						<a href="ejercicio_3_moto.moto.html" class="tsd-kind-icon">Moto</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
-								<a href="ejercicio_2_gestor.gestor.html#constructor" class="tsd-kind-icon">constructor</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+								<a href="ejercicio_3_moto.moto.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="ejercicio_3_moto.moto.html#dimensiones" class="tsd-kind-icon">dimensiones</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
+								<a href="ejercicio_3_moto.moto.html#velocidad" class="tsd-kind-icon">velocidad</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ejercicio_2_gestor.gestor.html#addarticulo" class="tsd-kind-icon">add<wbr>Articulo</a>
+								<a href="ejercicio_3_moto.moto.html#getemisiones" class="tsd-kind-icon">get<wbr>Emisiones</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ejercicio_2_gestor.gestor.html#buscaarticulos" class="tsd-kind-icon">busca<wbr>Articulos</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="ejercicio_2_gestor.gestor.html#muestraarticulos" class="tsd-kind-icon">muestra<wbr>Articulos</a>
+								<a href="ejercicio_3_moto.moto.html#getmatricula" class="tsd-kind-icon">get<wbr>Matricula</a>
 							</li>
 						</ul>
 					</li>
@@ -324,6 +330,9 @@
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
 			</ul>
 		</div>
 	</div>
