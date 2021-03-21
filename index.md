@@ -412,7 +412,7 @@ export interface Movable {
 }
 ```
 
-Nuestra clase vehiculo implementará dicha interfaz y será la clase padre del todos nuestros vehiculos:
+Nuestra clase vehiculo implementará dicha interfaz y será la clase padre del todos nuestros vehiculos (por lo tanto todos los vehiculos deben tener velocidad y dimensiones):
 
 ```ts
 /**
@@ -430,9 +430,137 @@ export class Vehiculo implements Movable {
 }
 ```
 
+Cada clase que represente un vehículo debe tener, al menos, las propiedades velocidad y dimensiones (que serán heredadas). Sin embargo, ciertos vehiculos tendrán propiedades adicionales relativas a su naturaleza concreta. Por ejemplo los coches (a diferencia de los peatones) tendrán matricula y emisiones; otros como los trenes tendrán emisiones pero no matricula...
 
+```ts
+/**
+ * Clase Coche
+ * Hereda de la clase Vehiculo
+ */
+ export class Coche extends Vehiculo {
+    /**
+     * Constructor
+     * @param velocidad velocidad en km/h a la que se mueve (heredada de vehiculo)
+     * @param dimensiones "largoXancho" en metros del vehiculo (heredada de vehiculo)
+     * @param emisiones gramos de CO2 por kilometro que emite el vehiculo
+     * @param matricula matricula del vehiculo
+     */
+    constructor (public velocidad :number,public dimensiones :string, private emisiones :number, private matricula :string ){
+        super(velocidad,dimensiones)
+    }
+```
 
+La clase principal de este ejercicio es la clase Street, ya que se trata de una calle que albergará todos los vehículos que circulen por ella.
 
+```ts
+    /**
+     * Constructor
+     * @param nombre nombre de la calle
+     * @param localizacion localizacion de la calle
+     * @param tipos tipos de vehiculos que pueden circular por la calle
+     */
+    constructor (private nombre :string, private localizacion :string, private tipos :string[]){
+    }
+```
+
+Un parámetro importante que recibe esta clase es el de los tipos de vehículo que pueden circular por esa calle. Debemos tener esto en cuenta a la hora de añadir vehículos a la calle ya que, si el vehículo no esta permitido en ella, no será introducido:
+
+```ts
+    /**
+     * Funcion addVehiculo
+     * Comprueba que el vehiculo pueda circular por la calle y, si es así, lo añade
+     * @param vehiculo vehiculo a añadir
+     */
+    public addVehiculo(vehiculo :Vehiculo){
+        var i :number = 0;
+        while(i<this.tipos.length){
+            if(this.tipos[i] == vehiculo.constructor.name){
+                this.vehiculos.push(vehiculo);
+                break;
+            } else {
+                i++
+            }
+        }
+        if (i == this.tipos.length){
+            console.log("Un vehiculo tipo:", vehiculo.constructor.name, " no puede circular por la calle", this.nombre)
+        }
+    }
+
+```
+
+Street también tiene un método que permite contar los vehículos de cada tipo que se encuentran en la calle y lo muestra por consola. Para ello, este método recorre el vector de vehículos interno y va sumando a un contador multiple cuando se verifica el tipo del vehiculo en cada iteración. Una vez terminado de almacenar dicha informació, se reestructura y se muestra por pantalla a modo de mensaje:
+
+```ts
+/**
+     * Funcion contarVehiculos
+     * Muestra por consola la cantidad de vehículos de cada tipo circulando
+     */
+    public contarVehiculos(){
+
+        var contador :number[] = [0,0,0,0,0,0,0];
+        for (var i :number = 0; i < this.vehiculos.length; i++){
+
+            switch(true){
+                case this.vehiculos[i] instanceof Peaton:
+                    contador[0] = contador[0]+1;
+                    break;
+                case this.vehiculos[i] instanceof Bicicleta:
+                    contador[1] = contador[1]+1;
+                    break;
+                case this.vehiculos[i] instanceof Patinete:
+                    contador[2] = contador[2]+1;
+                    break;
+                case this.vehiculos[i] instanceof Coche:
+                    contador[3] = contador[3]+1;
+                    break;
+                case this.vehiculos[i] instanceof Moto:
+                    contador[4] = contador[4]+1;
+                    break;
+                case this.vehiculos[i] instanceof Guagua:
+                    contador[5] = contador[5]+1;
+                    break;
+                case this.vehiculos[i] instanceof Tren:
+                    contador[6] = contador[6]+1;
+                    break;
+
+                default: 
+                break;
+            }
+        }
+        var resultado = "En la calle " + this.nombre + " hay";
+        var tipos_p :string[] = ["peatones","bicicletas","patinetes","coches","motos","guaguas","trenes"]
+        var tipos_s :string[] = ["peaton","bicicleta","patinete","coche","moto","guagua","tren"]
+        for (var i :number = 0; i<contador.length; i++){
+            if (contador[i] == 1){
+                resultado = resultado + " 1 " + tipos_s[i] + ",";
+            }
+            if (contador[i] > 1){
+                resultado = resultado + " " + contador[i] + " " + tipos_p[i] + ",";
+            }
+        }
+        resultado = resultado.slice(0,-1)
+        console.log(resultado)
+    }
+```
+
+La clase street también permite mostrar todos los vehículos ordenados de mayor a menor en función de su velocidad y mostrar esta información a modo de tabla:
+
+```ts
+    /**
+     * Funcion MostrarVehiculos
+     * Muestra por consola los vehículos circulando ordenados de mayor a menor velocidad
+     */
+    public mostrarVehiculos() {
+        var resultado :string[] = []
+        var ordenados :Vehiculo[] = this.vehiculos.sort((a, b) => b.velocidad - a.velocidad);
+        for (var i :number = 0; i < ordenados.length; i++){
+            resultado.push((ordenados[i].constructor.name))
+        }
+        console.table(ordenados)
+    }
+```
+
+<img src="img/3.PNG" alt="" />
 
 ### Conclusiones
 
