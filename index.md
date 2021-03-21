@@ -38,7 +38,7 @@ Paso a explicar la resolución de cada ejercicio y a adjuntar su código y expec
 
 (Para poder acceder a los atributos privados que creemos en las clases usaremos funciones *set* y *get*, las cuales se pueden encontrar en el código fuente.)
 
-#### 1.1 Ejercicio 1
+#### 2.1 Ejercicio 1
 
 **Enunciado:**
 A partir del Ejercicio 9 realizado en la Práctica 3, cree la estructura de clases e interfaces que considere oportuna para representar el siguiente escenario.
@@ -223,3 +223,228 @@ Como podemos comprobar, start necesita de la función pokemonDamage, la cual se 
     }
 ```
 <img src="img/1.PNG" alt="" />
+
+#### 2.2 Ejercicio 2
+
+**Enunciado:**
+Los gestores bibliográficos son herramientas que permiten almacenar, consultar y exportar artículos de investigación. Estos gestores permiten filtrar el contenido de su base de datos por los valores de los campos que tienen los artículos de investigación. Principalmente, los campos más importantes para el filtrado son las palabras clave, autores, fecha de publicación y editorial, entre otros.
+
+A partir de esta premisa, diseñe el conjunto de clases e interfaces que considere para representar un gestor bibliográfico. El desarrollo realizado debe tener las siguientes funcionalidades:
+
+Para cada artículo de investigación habrá que almacenar:
+* Título
+* Autor o autores del artículo.
+* Email de cada uno de los autores.
+* Palabras claves o keywords.
+* Resumen o abstract del artículo.
+* Fecha de publicación.
+* Editorial en la que se publicó el artículo.
+* Número de citas: cantidad de veces que el artículo ha sido referenciado en otros trabajos.
+* Además, incluya un método que devuelva la referencia del artículo en formato APA
+
+El gestor bibliográfico deberá:
+
+* Almacenar la información de múltiples artículos.
+* Mostrar por la consola la información incluida en la base de datos en formato tabla (console.table).
+* Permitir llevar a cabo búsquedas de trabajos por palabras claves y mostrar los resultados de la búsqueda en formato de tabla. Además, se deberá poder filtrar por los campos fecha de publicación, editorial y nombre de autor.
+* Permitir la exportación de los resultados de una búsqueda en formato de cita APA.
+
+**Resolución:**
+
+La clase articulo contiene todas las propiedades de un articulo. Se construye de la siguiente manera:
+
+```ts
+    /**
+     * Constructor
+     * @param titulo titulo del articulo
+     * @param autor autor / autores del articulo
+     * @param email email del autor / autores
+     * @param keywords palabras clave del articulo
+     * @param resumen resumen o abstract del articulo
+     * @param fecha fecha de publicación del articulo
+     * @param editorial editorial en la que se publicó el articulo
+     * @param numCitas cantidad de veces que el articulo ha sido referenciado en otros trabajos
+     */
+    constructor(private titulo: string, private autor: string[], private email: string[], private keywords: string[], private resumen: string, private fecha: number,private editorial: string, private numCitas: number) {
+    }
+```
+
+La clase articulo tiene un método que permite cambiar el formato del articulo a formato APA. Lo que hace este método es obtener las propiedades del articulo y devolverlas reordenadas y modificadas de tal manera que encajen en los requisitos de un artículo en APA:
+
+```ts
+    /**
+     * Funcion toAPA
+     * Formatea el articulo para que sea de tipo APA
+     */
+    public toAPA(){
+        var articulosCoinciden :string = ""
+        articulosCoinciden = articulosCoinciden + this.autor[0]
+        for (var i :number = 1; i < this.autor.length-1; i++){
+            articulosCoinciden = articulosCoinciden + ", " + this.autor[i] + "."
+        }
+        articulosCoinciden = articulosCoinciden + " y " + + "."
+        articulosCoinciden = articulosCoinciden + ' (' + this.fecha + '). ' + this.titulo + '. ' + this.editorial + '.';
+        return articulosCoinciden;
+    }
+```
+
+Debemos inmplementar también la clase Gestor que nos servirá de gestor biblipgráfico almacenando y gestionando a todos los articulos:
+
+```ts
+    /**
+     * Constructor
+     * @param articulos conjunto de articulos
+     */
+    constructor(private articulos: Articulo[]) {
+    }
+```
+
+Esta clase gestor tendrá un metodo que nos permita mostrar todos los articulos que aloja por pantalla a modo de tabla:
+
+```ts
+    /**
+     * Funcion muestraArticulos
+     * Muestra los articulos por pantalla
+     */  
+    public muestraArticulos() {
+      console.table(this.articulos);
+    }
+```
+
+Y otro para añadirle articulos adicionales:
+
+```ts    
+    /**
+     * Funcion addArticulo
+     * @param articulo articulo a añadir al conjunto
+     */  
+    public addArticulo(articulo: Articulo) {
+      this.articulos.push(articulo);
+    }
+
+```
+
+Sin embargo, la función principal de nuestro gestor bibliográfico es la de encontrar articulos que coincidan con un filtro de búsqueda que le impongamos.
+
+Para ello se implementa el método buscaArticulos que recibe como parámetro la palabra que se desea encontrar y el campo en el que se debe encontrar. Teniendo esto en cuenta, el método recorre su base de datos filtrando con estas restricciones y almacena los articulos encontrados que satisfagan nuestro criterio. A continuación los muestra uno a uno en formato APA:
+
+```ts
+    /**
+   * Funcion buscaArticulos
+   * Arroja los articulos que coinciden con los filtros de búsqueda
+   * @param keywords palabras claves por las que buscar
+   * @param filtrar campo por el que filtrar
+   * @returns El articulo/articulos filtrar en formato APA
+   */
+    public buscaArticulos(keywords: string[], filtrar: string[]) {
+        var numero: number[] = [];
+        for (var i: number = 0; i < keywords.length; i++) {
+            for (var j: number = 0; j < this.articulos.length; j++) {
+                for (var k: number = 0; k < filtrar.length; k++) {
+                    if (filtrar[k] == 'keywords') {
+                        for (var l: number = 0; l < this.articulos[j].getKeywords().length; l++) {
+                            if (this.articulos[j].getKeywords()[l] == keywords[i]) {
+                                numero.push(j);
+                            }
+                        }
+                    }
+                    if (filtrar[k] == 'fecha') {
+                        if (this.articulos[j].getFecha().toFixed() == keywords[i]) {
+                            numero.push(j);
+                        }
+                    }
+                    if (filtrar[k] == 'autor') {
+                        for (var l: number = 0; l < this.articulos[j].getAutor().length; l++) {
+                            if (this.articulos[j].getAutor()[l] == keywords[i]) {
+                                numero.push(j);
+                            }
+                        }
+                    }
+
+                    if (filtrar[k] == 'editorial') {
+                        if (this.articulos[j].getEditorial() == keywords[i]) {
+                            numero.push(j);
+                        }
+                    }
+                }
+            }
+        }
+        for (var i = numero.length -1; i >=0; i--) {
+            if (numero.indexOf(numero[i]) !== i){
+                numero.splice(i, 1);
+            }
+        }
+        var articulosCoinciden: Articulo[] = [];
+        var i :number = 0;
+        while (i < numero.length) {
+            articulosCoinciden.push(this.articulos[numero[i]]);
+        }
+        var resultado: string[] = [];
+        for (var i: number = 0; i < articulosCoinciden.length; i++) {
+            resultado.push(articulosCoinciden[i].toAPA());
+            console.log(resultado[i]);
+        }
+        return resultado;    
+    }
+```
+<img src="img/2.PNG" alt="" />
+
+#### 2.3 Ejercicio 3
+
+**Enunciado:**
+En este ejercicio se solicita crear una serie de clases que permitan representar los diferentes vehículos y medios de transporte que se pueden usar para desplazarse por una ciudad. Entre ellos podemos encontrar los coches, motos, patinetes, trenes, guaguas, bicicletas e, incluso, podríamos considerar el ser un peatón, entre otros.
+
+Cree una interfaz denominada Movable que incluya las propiedades y métodos necesarios que deberá implementar cualquier clase que represente a un objeto que pueda moverse. A continuación, escriba las clases necesarias para representar los medios de transporte mencionados con anterioridad.
+
+Por último, cree una clase Street que reciba el nombre de una calle y su localización, además de distintos tipos de vehículos que podrían circular por la misma. La clase deberá incluir un método que muestre por la consola la cantidad de vehículos de cada tipo que hay en ella en cada momento. Asimismo, se deberá poder añadir o eliminar vehículos de la calle en cualquier momento y ordenar y mostrar los vehículos según la velocidad a la que circulan.
+
+**Resolución:**
+
+Nuestra interfaz Movable contendrá las dos propiedades fundamentales para todo vehiculo (velocidad y dimensiones):
+
+```ts
+/**
+ * Interfaz Movable para vehiculos
+ */
+export interface Movable {
+    velocidad :number;
+    dimensiones :string
+}
+```
+
+Nuestra clase vehiculo implementará dicha interfaz y será la clase padre del todos nuestros vehiculos:
+
+```ts
+/**
+ * Clase padre Vehiculo
+ * Implementa la interfaz Movable
+ */
+export class Vehiculo implements Movable {
+    /**
+     * Constructor
+     * @param velocidad velocidad en km/h a la que se mueve
+     * @param dimensiones "largoXancho" en metros del vehiculo
+     */
+    constructor (public velocidad :number,public dimensiones :string){
+    }
+}
+```
+
+
+
+
+
+### Conclusiones
+
+Esta práctica me resultó de gran utilidad para poner en práctica los conocimientos sobre objetos, clases e interfaces. He aprendido bastante sobre este tipo de datos y, sin duda, serán herramientas que usaré a menudo en mis siguientes proyectos de TypeScript.
+
+### Bibliografía
+
+A continuación se muestra una serie de recursos que han sido de gran utilidad para la realización de la práctica y de este informe:
+
+Recurso| Dirección
+-------|----------
+Guía de la práctica | https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/
+Apuntes | https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-arrays-tuples-enums.html
+W3schools | https://www.w3schools.com/
+Instancias y constructores | https://stackoverflow.com/questions/6973866/javascript-get-type-instance-name/36094818
