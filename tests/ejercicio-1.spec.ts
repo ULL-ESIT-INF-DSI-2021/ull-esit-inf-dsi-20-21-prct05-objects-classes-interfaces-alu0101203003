@@ -1,8 +1,8 @@
 import 'mocha';
 import {expect} from 'chai';
 import {Pokemon} from '../src/ejercicio-1/pokemon';
-import {Combat} from '../src/ejercicio-1/pokedex';
 import {Pokedex} from '../src/ejercicio-1/combat';
+import {Combat} from '../src/ejercicio-1/pokedex';
 
 describe('Ejercicio 1: Pokedex', () => {
     var bulbasaur = new Pokemon("Bulbasaur",6.9, 0.7,"hierba",[49,49,45,45])
