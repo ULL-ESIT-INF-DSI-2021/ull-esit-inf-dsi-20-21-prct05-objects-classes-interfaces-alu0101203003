@@ -578,7 +578,7 @@ La clase street también permite mostrar todos los vehículos ordenados de mayor
 
 ### Conclusiones
 
-Esta práctica me resultó de gran utilidad para poner en práctica los conocimientos sobre objetos, clases e interfaces. He aprendido bastante sobre este tipo de datos y, sin duda, serán herramientas que usaré a menudo en mis siguientes proyectos de TypeScript.
+Esta práctica nos ha resultado de gran utilidad para poner en práctica los conocimientos sobre objetos, clases e interfaces. He aprendido bastante sobre este tipo de datos y, sin duda, serán herramientas que usaré a menudo en mis siguientes proyectos de TypeScript.
 
 ### Bibliografía
 
