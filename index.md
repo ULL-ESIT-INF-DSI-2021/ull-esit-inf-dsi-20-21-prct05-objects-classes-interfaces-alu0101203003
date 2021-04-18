@@ -587,6 +587,5 @@ A continuación se muestra una serie de recursos que han sido de gran utilidad p
 Recurso| Dirección
 -------|----------
 Guía de la práctica | https://ull-esit-inf-dsi-2021.github.io/prct05-objects-classes-interfaces/
-Apuntes | https://ull-esit-inf-dsi-2021.github.io/typescript-theory/typescript-arrays-tuples-enums.html
+Apuntes | https://ull-esit-inf-dsi-2021.github.io/typescript-theory/
 W3schools | https://www.w3schools.com/
-Instancias y constructores | https://stackoverflow.com/questions/6973866/javascript-get-type-instance-name/36094818
